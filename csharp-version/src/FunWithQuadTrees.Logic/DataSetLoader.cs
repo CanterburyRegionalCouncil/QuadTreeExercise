@@ -41,7 +41,10 @@ namespace FunWithQuadTrees.Logic
         {
             try
             {
-                return JsonSerializer.Deserialize<List<DataPoint>>(jsonData);
+                return JsonSerializer.Deserialize<List<DataPoint>>(jsonData, options: new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
             }
             catch (SerializationException ex)
             {

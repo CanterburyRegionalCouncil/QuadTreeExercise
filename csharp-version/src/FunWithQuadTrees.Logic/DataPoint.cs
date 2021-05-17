@@ -4,8 +4,8 @@ namespace FunWithQuadTrees.Logic
 {
     public class DataPoint : IComparable
 	{
-		public float X { get; }
-		public float Y { get; }
+		public float X { get; set; }
+		public float Y { get; set; }
 
 		public DataPoint() { }
 
@@ -27,5 +27,14 @@ namespace FunWithQuadTrees.Logic
 			return r1.Equals(r2) ? 0 :
 				r1 > r2 ? 1 : -1;
 		}
+
+        /// <summary>
+        /// A human readable representation for debugging purposes
+        /// </summary>
+        /// <returns>A human readable representation</returns>
+        public override string ToString()
+        {
+            return $"x: {X}, y: {Y}";
+        }
     }
 }
