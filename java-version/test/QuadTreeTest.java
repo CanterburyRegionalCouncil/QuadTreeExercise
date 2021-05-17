@@ -22,10 +22,6 @@ public class QuadTreeTest {
 		}
 	};
 
-	public static void main(String[] args) {
-		new QuadTreeTest().testIntersect();
-	}
-
 	@Test
 	public void testIntersect() throws Exception {
 		List<DataPoint> dataset = DataSet.readDataPoints(DATASET);
