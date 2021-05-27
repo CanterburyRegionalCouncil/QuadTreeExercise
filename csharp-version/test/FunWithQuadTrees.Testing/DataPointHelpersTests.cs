@@ -6,7 +6,7 @@ using Xunit;
 namespace FunWithQuadTrees.Testing
 {
     /// <summary>
-    /// Tests to ensure that our <see cref="DataPointHelpersTests"/> comparisons are correct
+    /// Tests to ensure that our <see cref="DataPointHelpers"/> comparisons are correct
     /// </summary>
     public class DataPointHelpersTests
     {
