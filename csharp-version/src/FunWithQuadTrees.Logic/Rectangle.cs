@@ -12,6 +12,14 @@
             X2 = x2;
             Y2 = y2;
         }
+        
+        public Rectangle(DataPoint point1, DataPoint point2)
+        {
+            X1 = point1.X;
+            Y1 = point1.Y;
+            X2 = point2.X;
+            Y2 = point2.Y;
+        }
 
         public float X1 { get; }
         public float Y1 { get; }
