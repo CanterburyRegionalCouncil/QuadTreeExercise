@@ -49,6 +49,8 @@ namespace FunWithQuadTrees.Testing
         [InlineData(true, 50, 50, 0, 0, 100, 100)]
         [InlineData(false, -100, 100, 0, 0, 100, 100)]
         [InlineData(false, 100, -100, 0, 0, 100, 100)]
+        [InlineData(false, -0.1f, -0.1f, 0.1f, 0.1f, 100, 100)]
+        [InlineData(true, 1.2566288E-7, 1.2566288E-7, -0.1f, -0.1f, 0.1f, 0.1f)]
         public void ContainsPointShallReturnAsExpected(
             bool expectedResult,
             float xTest, float yTest,
