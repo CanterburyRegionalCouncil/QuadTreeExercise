@@ -8,7 +8,7 @@ namespace FunWithQuadTrees.Logic
 {
     public static class QuadTreeHelper
     {
-        public static void AddLeaf(this QuadTree quadTree, float x, float y)
+        public static void AddLeaf(this QuadTree quadTree, decimal x, decimal y)
         {
             quadTree.Leaves.Add(new DataPoint(x, y));
         }

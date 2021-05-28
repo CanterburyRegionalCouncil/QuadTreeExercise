@@ -19,7 +19,7 @@ namespace FunWithQuadTrees.Logic
 			Capacity = capacity;
 		}
 
-		public QuadTree(float x1, float y1, float x2, float y2) : base(x1, y1, x2, y2)
+		public QuadTree(decimal x1, decimal y1, decimal x2, decimal y2) : base(x1, y1, x2, y2)
 		{
 		}
 

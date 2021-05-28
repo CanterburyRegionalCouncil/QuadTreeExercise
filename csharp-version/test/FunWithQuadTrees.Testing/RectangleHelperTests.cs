@@ -9,9 +9,9 @@ namespace FunWithQuadTrees.Testing
         [InlineData(100, 100, 100, 100, 0, 0)]
         [InlineData(100, 100, 0, 0, 100, 100)]
         public void GetNorthEastShallReturnAsExpected(
-            float xExpected, float yExpected, 
-            float x1, float y1, 
-            float x2, float y2)
+            decimal xExpected, decimal yExpected, 
+            decimal x1, decimal y1, 
+            decimal x2, decimal y2)
         {
             // Arrange
             var rect = new Rectangle(x1: x1, y1: y1, x2: x2, y2: y2);
@@ -28,9 +28,9 @@ namespace FunWithQuadTrees.Testing
         [InlineData(100, 0, 100, 100, 0, 0)]
         [InlineData(100, 0, 0, 0, 100, 100)]
         public void GetSouthEastShallReturnAsExpected(
-            float xExpected, float yExpected,
-            float x1, float y1,
-            float x2, float y2)
+            decimal xExpected, decimal yExpected,
+            decimal x1, decimal y1,
+            decimal x2, decimal y2)
         {
             // Arrange
             var rect = new Rectangle(x1: x1, y1: y1, x2: x2, y2: y2);
@@ -53,9 +53,9 @@ namespace FunWithQuadTrees.Testing
         [InlineData(true, 1.2566288E-7, 1.2566288E-7, -0.1f, -0.1f, 0.1f, 0.1f)]
         public void ContainsPointShallReturnAsExpected(
             bool expectedResult,
-            float xTest, float yTest,
-            float x1, float y1,
-            float x2, float y2)
+            decimal xTest, decimal yTest,
+            decimal x1, decimal y1,
+            decimal x2, decimal y2)
         {
             // Arrange
             var rect = new Rectangle(x1: x1, y1: y1, x2: x2, y2: y2);

@@ -50,22 +50,22 @@
             };
         }
 
-        public static float GetNorthBoundary(this Rectangle rectangle)
+        public static decimal GetNorthBoundary(this Rectangle rectangle)
         {
             return rectangle.GetNorthEast().Y;
         }
 
-        public static float GetEastBoundary(this Rectangle rectangle)
+        public static decimal GetEastBoundary(this Rectangle rectangle)
         {
             return rectangle.GetNorthEast().X;
         }
 
-        public static float GetSouthBoundary(this Rectangle rectangle)
+        public static decimal GetSouthBoundary(this Rectangle rectangle)
         {
             return rectangle.GetSouthWest().Y;
         }
 
-        public static float GetWestBoundary(this Rectangle rectangle)
+        public static decimal GetWestBoundary(this Rectangle rectangle)
         {
             return rectangle.GetSouthWest().X;
         }

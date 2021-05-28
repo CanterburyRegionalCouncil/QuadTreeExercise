@@ -11,39 +11,38 @@ namespace FunWithQuadTrees.Testing
     {
         [Theory]
         [ClassData(typeof(DataSetTestData))]
-        public void QuadTreeIntersectionProcessorShallReturnExpectedIntersection(IList<DataPoint> testDataSet, IList<DataPoint> expectedResult)
+        public void QuadTreeIntersectionProcessorShallReturnExpectedIntersection(List<DataPoint> testDataSet, List<DataPoint> expectedResult)
         {
             // Arrange
-            Rectangle rect = new Rectangle(-0.1f, -0.1f, 0.1f, 0.1f);
+            Rectangle rect = new Rectangle(-0.1m, -0.1m, 0.1m, 0.1m);
 
             // Act
             //List<DataPoint> actualResult = GetIntersectedSetUsingQuadTree(testDataSet, rect);
             
             //List<DataPoint> actualResult = testDataSet
-            //    .Where(i => i.X > -0.1f && i.X < 0.1f)
-            //    .Where(i => i.Y > -0.1f && i.Y < 0.1f)
+            //    .Where(i => i.X > -0.1m && i.X < 0.1m)
+            //    .Where(i => i.Y > -0.1m && i.Y < 0.1m)
             //    .ToList();
 
             List<DataPoint> actualResult = testDataSet
-                .Where(i => i.X >= -0.1f && i.X <= 0.1f)
-                .Where(i => i.Y >= -0.1f && i.Y <= 0.1f)
+                .Where(i => i.X >= -0.1m && i.X <= 0.1m)
+                .Where(i => i.Y >= -0.1m && i.Y <= 0.1m)
                 .ToList();
 
-            var unexpectedResult = expectedResult
-                .Where(i => i.X < -0.1f || i.X > 0.1f ||
-                    i.Y < -0.1f || i.Y > 0.1f)
-                .ToList();
+            //actualResult.Sort();
 
-            var expectedResultYDescending = expectedResult.OrderByDescending(i => i.Y).ToList();
-            var testDataSetYDescending = testDataSet.OrderByDescending(i => i.Y).ToList();
+            //var unexpectedResult = expectedResult
+            //    .Where(i => i.X < -0.1m || i.X > 0.1m ||
+            //        i.Y < -0.1m || i.Y > 0.1m)
+            //    .ToList();
+
+            //var expectedResultYDescending = expectedResult.OrderByDescending(i => i.Y).ToList();
+            //var testDataSetYDescending = testDataSet.OrderByDescending(i => i.Y).ToList();
 
             // 25417 using > and <
-            // 25417 using > and <
-
-            actualResult.Sort();
+            // 25417 using >= and <=
 
             // Assert
-            Assert.Equal(expectedResult.Count, actualResult.Count);
             Assert.True(actualResult.Identical(expectedResult));
         }
 
