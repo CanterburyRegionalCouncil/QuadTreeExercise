@@ -6,7 +6,7 @@ using Xunit;
 namespace FunWithQuadTrees.Testing
 {
     /// <summary>
-    /// Tests to ensure that our <see cref="DataPointHelpers"/> comparisons are correct
+    /// Tests to ensure that our <see cref="DataPointHelper"/> comparisons are correct
     /// </summary>
     public class DataPointHelpersTests
     {
@@ -46,6 +46,73 @@ namespace FunWithQuadTrees.Testing
             }
 
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        }
+
+        [Fact]
+        public void SortShallArrangeByXThenByY()
+        {
+            // Arrange
+            var dataPointList = new List<DataPoint>{
+                            new DataPoint(3, 2),
+                            new DataPoint(3, 1),
+                            new DataPoint(0, 0),
+                        };
+
+            // Act
+            dataPointList.Sort();
+
+            // Assert
+            Assert.Equal(0, dataPointList[0].X); // We expect the 0, 0 to be first
+            Assert.Equal(0, dataPointList[0].Y); // We expect the 0, 0 to be first
+            Assert.Equal(3, dataPointList[1].X); // We expect the 3, 1 to be second
+            Assert.Equal(1, dataPointList[1].Y); // We expect the 3, 1 to be second
+            Assert.Equal(3, dataPointList[2].X); // We expect the 3, 2 to be second
+            Assert.Equal(2, dataPointList[2].Y); // We expect the 3, 2 to be second
+        }
+
+        [Fact]
+        public void SortShallPutNegativeValuesFirst()
+        {
+            // Arrange
+            var dataPointList = new List<DataPoint>{
+                            new DataPoint(3, 1),
+                            new DataPoint(-1, -1),
+                            new DataPoint(0, 0),
+                        };
+
+            // Act
+            dataPointList.Sort();
+
+            // Assert
+            Assert.Equal(-1, dataPointList[0].X); // We expect the -1, -1 to be first
+            Assert.Equal(-1, dataPointList[0].Y); // We expect the -1, -1 to be first
+            Assert.Equal(0, dataPointList[1].X); // We expect the 0, 0 to be second
+            Assert.Equal(0, dataPointList[1].Y); // We expect the 0, 0 to be second
+            Assert.Equal(3, dataPointList[2].X); // We expect the 3, 2 to be second
+            Assert.Equal(1, dataPointList[2].Y); // We expect the 3, 2 to be second
+        }
+
+        [Fact]
+        public void SortingMultipleTimeShallReturnTheSameResult()
+        {
+            // Arrange
+            var dataPointList = new List<DataPoint>{
+                            new DataPoint(3, 1),
+                            new DataPoint(-1, -1),
+                            new DataPoint(0, 0),
+                        };
+
+            // Act
+            dataPointList.Sort();
+            dataPointList.Sort();
+
+            // Assert
+            Assert.Equal(-1, dataPointList[0].X); // We expect the -1, -1 to be first
+            Assert.Equal(-1, dataPointList[0].Y); // We expect the -1, -1 to be first
+            Assert.Equal(0, dataPointList[1].X); // We expect the 0, 0 to be second
+            Assert.Equal(0, dataPointList[1].Y); // We expect the 0, 0 to be second
+            Assert.Equal(3, dataPointList[2].X); // We expect the 3, 2 to be second
+            Assert.Equal(1, dataPointList[2].Y); // We expect the 3, 2 to be second
         }
 
         [Theory]

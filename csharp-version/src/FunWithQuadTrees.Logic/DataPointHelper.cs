@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace FunWithQuadTrees.Logic
 {
-    public static class DataPointHelpers
+    public static class DataPointHelper
     {
-        //private const decimal _epsilon = 0.000001f;
-
         /// <summary>
         /// Compares to another list of data points and returns true if they are identical
         /// </summary>
@@ -19,8 +15,7 @@ namespace FunWithQuadTrees.Logic
                 return false;
             }
 
-            // Ensure that each collection is sorted then compare each index
-            dataPoints1.Sort();
+            // Ensure that each collection is sorted then compare each index in order
             dataPoints1.Sort();
             dataPoints2.Sort();
 
@@ -59,13 +54,18 @@ namespace FunWithQuadTrees.Logic
         }
 
         /// <summary>
-        /// Compares to another data point and returns true if it is identical
+        /// Compares to another data point and returns true if it is identical. Sorts by X then by Y.
         /// </summary>
         /// <returns>True if both data points are identical</returns>
         public static int Compare(this DataPoint dataPoint1, DataPoint dataPoint2)
         {
-            return Math.Abs(decimal.Compare(dataPoint1.X, dataPoint2.X)) +
-                Math.Abs(decimal.Compare(dataPoint1.Y, dataPoint2.Y));
+            if (dataPoint1.X > dataPoint2.X) return 2;
+            if (dataPoint1.X < dataPoint2.X) return -2;
+            
+            if (dataPoint1.Y > dataPoint2.Y) return 1;
+            if (dataPoint1.Y < dataPoint2.Y) return -1;
+
+            return 0;
         }
     }
 }

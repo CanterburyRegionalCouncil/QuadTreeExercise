@@ -11,7 +11,7 @@ namespace FunWithQuadTrees.Testing
     {
         [Theory]
         // Arrange
-        // Note differing case so that we can deserialise to upper-case property names and follow standard naming convensions
+        // Note differing case so that we can deserialise to upper-case property names and follow standard naming conventions
         [InlineData("[{\"x\": -0.0461572, \"y\": -0.0461572}]", -0.0461572, -0.0461572)]
         [InlineData("[{\"X\": -0.0461572, \"Y\": -0.0461572}]", -0.0461572, -0.0461572)]
         public void JsonShallDeserialiseAsExpected(string json, decimal expectedX, decimal expectedY)

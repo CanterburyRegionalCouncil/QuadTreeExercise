@@ -54,7 +54,7 @@ namespace FunWithQuadTrees.Logic
         /// <summary>
         /// Our QuadTree is over capacity so it needs to be split up
         /// </summary>
-        /// <remarks>Always takes a quadtree with no children and creates 4 children</remarks>
+        /// <remarks>Always takes a <see cref="QuadTree"/> with no children and creates 4 children</remarks>
         /// <param name="quadTree">The quad tree to split</param>
         public static void Split(this QuadTree quadTree)
         {
@@ -67,7 +67,7 @@ namespace FunWithQuadTrees.Logic
         /// <summary>
         /// Moves all leaves to child QuadTrees
         /// </summary>
-        /// <param name="quadTree"></param>
+        /// <param name="quadTree">The target QuadTree</param>
         public static void DistributeLeaves(this QuadTree quadTree)
         {
             // We have split. Now we need to determine where our leaves go
@@ -99,6 +99,11 @@ namespace FunWithQuadTrees.Logic
             quadTree.NorthWest = new QuadTree(mid, northWest, quadTree.Capacity);
         }
 
+        /// <summary>
+        /// Get all children for a given QuadTree
+        /// </summary>
+        /// <param name="quadTree">The target QuadTree</param>
+        /// <returns>A list of children</returns>
         public static List<QuadTree> GetAllChildren(this QuadTree quadTree)
         {
             if (quadTree.NorthEast == null) return new List<QuadTree>();

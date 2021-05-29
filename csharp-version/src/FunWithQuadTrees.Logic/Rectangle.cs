@@ -1,9 +1,12 @@
 ﻿namespace FunWithQuadTrees.Logic
 {
+    /// <summary>
+    /// Encapsulates a Rectangle shape
+    /// </summary>
     public class Rectangle
     {
-        //public Rectangle() : this(x1: decimal.PositiveInfinity, y1: decimal.PositiveInfinity, x2: decimal.PositiveInfinity, y2: decimal.PositiveInfinity)
-        //{}
+        public Rectangle() : this(x1: decimal.MaxValue, y1: decimal.MaxValue, x2: decimal.MinValue, y2: decimal.MinValue)
+        { }
 
         public Rectangle(decimal x1, decimal y1, decimal x2, decimal y2)
         {
