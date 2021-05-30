@@ -37,7 +37,7 @@ namespace FunWithQuadTrees.Testing
             Rectangle rect = new Rectangle(-0.1m, -0.1m, 0.1m, 0.1m);
 
             // Act
-            // Simply compare to pick out points within our target x and y ranges
+            // Simply make a one-by-one (O(n)) comparison for all points against our target x and y ranges
             List<DataPoint> actualResult = testDataSet
                 .Where(i => i.X > -0.1m && i.X < 0.1m &&
                     i.Y > -0.1m && i.Y < 0.1m)
