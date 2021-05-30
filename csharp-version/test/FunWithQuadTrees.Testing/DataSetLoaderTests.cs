@@ -11,10 +11,10 @@ namespace FunWithQuadTrees.Testing
     {
         [Theory]
         // Arrange
-        // Note differing case so that we can deserialise to upper-case property names and follow standard naming convensions
+        // Note differing case so that we can deserialise to upper-case property names and follow standard naming conventions
         [InlineData("[{\"x\": -0.0461572, \"y\": -0.0461572}]", -0.0461572, -0.0461572)]
         [InlineData("[{\"X\": -0.0461572, \"Y\": -0.0461572}]", -0.0461572, -0.0461572)]
-        public void JsonShallDeserialiseAsExpected(string json, float expectedX, float expectedY)
+        public void JsonShallDeserialiseAsExpected(string json, decimal expectedX, decimal expectedY)
         {
             // Act
             var dataPoints = DataSetLoader.DeserialiseDataPoints(json);
@@ -29,10 +29,9 @@ namespace FunWithQuadTrees.Testing
 
         [Theory]
         // Arrange
-        [InlineData(0, 0, 0)]
-        [InlineData(1, 3.1415876E-8, 3.1415876E-8)]
-        [InlineData(2, 1.2566288E-7, 1.2566288E-7)]
-        public void ExpectedDataSetLoadsAndHasExpectedValues(int index, float expectedX, float expectedY)
+        [InlineData(0, 0.05131014, 0.05131014)]
+        [InlineData(1, 0.052967735, 0.052967735)]
+        public void ExpectedDataSetLoadsAndHasExpectedValues(int index, decimal expectedX, decimal expectedY)
         {
             // Act
             var expected_dataset = DataSetLoader.ReadDataPoints("ExpectedDataSet.json");

@@ -43,7 +43,7 @@ namespace FunWithQuadTrees.Testing
             {
                 yield return new object[] { new DataPoint(), new DataPoint(), true };
                 yield return new object[] { new DataPoint(1, 1), new DataPoint(0, 0), false };
-                yield return new object[] { new DataPoint(1, 1), new DataPoint(-1, -1), true }; // Compare squares X and Y so negative makes no difference
+                //yield return new object[] { new DataPoint(1, 1), new DataPoint(-1, -1), true }; // Compare squares X and Y so negative makes no difference
                 yield return new object[] { new DataPoint(1, 1), new DataPoint(-2, -2), false }; 
                 yield return new object[] { new DataPoint(1, 1), new DataPoint(1, 1), true };
             }

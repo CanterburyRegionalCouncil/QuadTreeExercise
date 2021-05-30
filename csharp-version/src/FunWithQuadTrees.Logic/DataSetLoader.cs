@@ -37,6 +37,11 @@ namespace FunWithQuadTrees.Logic
             return DeserialiseDataPoints(jsonData);
         }
 
+        /// <summary>
+        /// Deserialises a JSON into a data point
+        /// </summary>
+        /// <param name="jsonData">JSON of a data point</param>
+        /// <returns>An instantiated data point</returns>
         public static List<DataPoint> DeserialiseDataPoints(string jsonData)
         {
             try
