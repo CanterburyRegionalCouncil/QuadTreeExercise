@@ -4,8 +4,6 @@ namespace FunWithQuadTrees.Logic
 {
     public class DataException : Exception
     {
-        private const long _serialVersionUID = 1L;
-
         public DataException(string description, Exception e) :
             base(description, e)
         {
