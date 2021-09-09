@@ -1,7 +1,7 @@
 ﻿namespace FunWithQuadTrees.Logic
 {
     /// <summary>
-    /// Static helper methods for <see cref="Rectangle"/>
+    /// Extension methods for <see cref="Rectangle"/>
     /// </summary>
     public static class RectangleHelper
     {

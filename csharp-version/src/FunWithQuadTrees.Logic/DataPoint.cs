@@ -19,7 +19,7 @@ namespace FunWithQuadTrees.Logic
         {
             DataPoint other = obj as DataPoint;
 
-			if (other == null) throw new Exception($"{nameof(obj)} needs to be of type {nameof(DataPoint)} when making a comparison");
+			if (other == null) throw new ArgumentException($"{nameof(obj)} needs to be of type {nameof(DataPoint)} when making a comparison");
 
             return this.Compare(other);
 		}
