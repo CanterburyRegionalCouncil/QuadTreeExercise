@@ -2,6 +2,8 @@ package quadTree;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -24,10 +26,10 @@ public class QuadTreeTest {
 
 	@Test
 	public void testIntersect() throws Exception {
-		List<DataPoint> dataset = DataSet.readDataPoints(DATASET);
+		List<DataPoint> dataset = quadTree.DataSet.readDataPoints(DATASET);
 		Rectangle rect = new Rectangle(-0.1f, -0.1f, 0.1f, 0.1f);
 
-		List<DataPoint> expectedResult = DataSet.readDataPoints(EXPECTED_DATASET);
+		List<DataPoint> expectedResult = quadTree.DataSet.readDataPoints(EXPECTED_DATASET);
 		List<DataPoint> actualResult = getIntersectedSetUsingQuadTree(dataset, rect);
 
 		Collections.sort(actualResult, resultComparator);
