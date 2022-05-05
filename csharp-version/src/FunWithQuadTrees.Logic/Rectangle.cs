@@ -5,7 +5,7 @@
     /// </summary>
     public class Rectangle
     {
-        public Rectangle() : this(x1: decimal.MaxValue, y1: decimal.MaxValue, x2: decimal.MinValue, y2: decimal.MinValue)
+        public Rectangle() : this(x1: decimal.MinValue, y1: decimal.MinValue, x2: decimal.MaxValue, y2: decimal.MaxValue)
         { }
 
         public Rectangle(decimal x1, decimal y1, decimal x2, decimal y2)
